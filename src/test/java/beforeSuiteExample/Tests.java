@@ -1,4 +1,4 @@
-package afterSuiteExample;
+package beforeSuiteExample;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -7,7 +7,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class Tests extends FixturesOne {
+public class Tests extends FixturesTwo {
 
     @Test(description = "Test writer in afterSuite")
     public void testOne() {
