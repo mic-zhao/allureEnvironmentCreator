@@ -24,12 +24,12 @@ public class AllurePropertiesEnvironmentWriter {
      * @param pathToAllureResults - path to folder "allure-results"
      */
     public void createAllureEnvironment(HashMap<String, String> allureEnvironment, String pathToAllureResults) {
-        createAllureResultsDirectoryIfNotExists(new File(pathToAllureResults));
+        createAllureResultsDirectoryIfNotExists(pathToAllureResults);
         createAndWriteEnvironmentProperties(allureEnvironment,pathToAllureResults);
     }
 
     private void createAndWriteEnvironmentProperties(HashMap<String, String> allureEnvironment, String pathToAllureResults){
-        try (OutputStream outputStream = new FileOutputStream(pathToAllureResults)) {
+        try (OutputStream outputStream = new FileOutputStream(pathToAllureResults + "/environment.properties")) {
             Properties allureProperties = new Properties();
 
             for (Map.Entry<String, String> property : allureEnvironment.entrySet()){
@@ -43,8 +43,9 @@ public class AllurePropertiesEnvironmentWriter {
         }
     }
 
-    private void createAllureResultsDirectoryIfNotExists(File allureResultsDirectory){
+    private void createAllureResultsDirectoryIfNotExists(String pathToAllureResultsDirectory){
         try {
+            File allureResultsDirectory = new File(pathToAllureResultsDirectory);
             if (!allureResultsDirectory.exists()) {
                 boolean resultOfCreatingDirectory = allureResultsDirectory.mkdir();
                 if (!resultOfCreatingDirectory) throw new IOException("Cannot create allure-result directory");
