@@ -1,4 +1,4 @@
-# allureEnvironmentCreator
+# allureToolbox
 
 ## Simple Java library with tools for Allure Framework.
 
