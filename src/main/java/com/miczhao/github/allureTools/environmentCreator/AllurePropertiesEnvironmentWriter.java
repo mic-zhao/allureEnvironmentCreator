@@ -11,7 +11,7 @@ import java.util.Properties;
 public class AllurePropertiesEnvironmentWriter {
 
     /**
-     * Creates environment.prop file in default folder "/target/allure-results/"
+     * Creates environment.properties file in default folder "/target/allure-results/"
      * @param allureEnvironment - map of environment properties
      */
     public void createAllureEnvironment(HashMap<String, String> allureEnvironment) {
@@ -19,7 +19,7 @@ public class AllurePropertiesEnvironmentWriter {
     }
 
     /**
-     * Creates environment.prop file in custom folder
+     * Creates environment.properties file in custom folder
      * @param allureEnvironment - map of environment properties
      * @param pathToAllureResults - path to folder "allure-results"
      */
