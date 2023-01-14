@@ -1,17 +1,15 @@
-package beforeSuiteExample;
+package afterSuiteXmlExample;
 
-import com.miczhao.github.allureTools.environmentCreator.AllurePropertiesEnvironmentWriter;
 import com.miczhao.github.allureTools.environmentCreator.AllureXmlEnvironmentWriter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeSuite;
 
 import java.util.HashMap;
 
-public class FixturesTwo {
+public class FixturesOne {
 
     public WebDriver chromeDriver;
 
@@ -26,14 +24,14 @@ public class FixturesTwo {
         chromeDriver.quit();
     }
 
-    @BeforeSuite
+    @AfterSuite
     public void afterSuite(){
         HashMap<String,String> allureEnvironment = new HashMap<>();
         allureEnvironment.put("Browser","Chrome");
         allureEnvironment.put("Version","102.648.743");
-        allureEnvironment.put("Stand_URL","https://www.google.com/");
+        allureEnvironment.put("Stand URL","http://test.com");
 
-        AllurePropertiesEnvironmentWriter allurePropertiesEnvironmentWriter = new AllurePropertiesEnvironmentWriter();
-        allurePropertiesEnvironmentWriter.createAllureEnvironment(allureEnvironment);
+        AllureXmlEnvironmentWriter allureXmlEnvironmentWriter = new AllureXmlEnvironmentWriter();
+        allureXmlEnvironmentWriter.createAllureEnvironment(allureEnvironment);
     }
 }

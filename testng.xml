@@ -3,7 +3,7 @@
 <suite name="Allure Environment Writer">
     <test name="Allure Environment creator in AfterSuite" parallel="methods" thread-count="1">
         <classes>
-            <class name="afterSuiteExample.Tests"></class>
+            <class name="afterSuiteXmlExample.Tests"></class>
         </classes>
     </test>
 </suite>
