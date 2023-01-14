@@ -1,5 +1,6 @@
 package beforeSuiteExample;
 
+import com.miczhao.github.allureTools.environmentCreator.AllurePropertiesEnvironmentWriter;
 import com.miczhao.github.allureTools.environmentCreator.AllureXmlEnvironmentWriter;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -30,9 +31,9 @@ public class FixturesTwo {
         HashMap<String,String> allureEnvironment = new HashMap<>();
         allureEnvironment.put("Browser","Chrome");
         allureEnvironment.put("Version","102.648.743");
-        allureEnvironment.put("Stand URL","https://www.google.com/");
+        allureEnvironment.put("Stand_URL","https://www.google.com/");
 
-        AllureXmlEnvironmentWriter allureXmlEnvironmentWriter = new AllureXmlEnvironmentWriter();
-        allureXmlEnvironmentWriter.createAllureEnvironment(allureEnvironment);
+        AllurePropertiesEnvironmentWriter allurePropertiesEnvironmentWriter = new AllurePropertiesEnvironmentWriter();
+        allurePropertiesEnvironmentWriter.createAllureEnvironment(allureEnvironment);
     }
 }
